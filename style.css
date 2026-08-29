@@ -1,0 +1,145 @@
+:root {
+  --bg: #0f1420;
+  --card-bg: #171d2b;
+  --border: #262f42;
+  --text: #e7ebf3;
+  --muted: #8b95ab;
+  --accent: #4f7cff;
+  --accent-hover: #3d67f0;
+  --ok: #34c98f;
+  --ok-bg: rgba(52, 201, 143, 0.12);
+  --err: #ef5a6f;
+  --err-bg: rgba(239, 90, 111, 0.12);
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #161c2c 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0 0 4px;
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.section h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.hint {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.result--idle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed var(--border);
+  color: var(--muted);
+}
+
+.result--loading {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.result--ok {
+  background: var(--ok-bg);
+  border: 1px solid rgba(52, 201, 143, 0.35);
+  color: var(--ok);
+}
+
+.result--error {
+  background: var(--err-bg);
+  border: 1px solid rgba(239, 90, 111, 0.35);
+  color: var(--err);
+}
+
+.result pre {
+  margin: 8px 0 0;
+  white-space: pre-wrap;
+  font-family: "SF Mono", Consolas, Monaco, monospace;
+  font-size: 0.82rem;
+  color: var(--text);
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
